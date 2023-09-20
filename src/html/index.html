@@ -5,91 +5,109 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jollof rice scaling calculator</title>
     <link rel="stylesheet" href="/dist/css/main.css">
+    <link rel="icon" href="/src/assets/business-3d-tomato.png" type="image/x-icon">
 </head>
 <body>
+
     <header>
-            Jollof Mate
+        <div>
+            <img src="/src/assets/business-3d-tomato.png" alt="tomato" height="30px" width="40px">
+        </div>
+        <div>
+            <h1>
+                <i>Jollof</i>
+                Mate</h1>
+        </div>
     </header>
-    <section id="copy">
-        <p class="copy__paragraph--introduction">
-            "Get ready to elevate your Jollof game with Jollof Mate!" Say goodbye to Jollof rice disasters and hello to culinary perfection.
-        </p>
-        <p class="copy__paragraph--keyfeatures">
-            <h2 class="keyfeatures--heading">
+    <main class="article">
+        <section id="copy">
+            <div>
+                <img src="/src/assets/pexels-keesha's-kitchen-13915043.jpg" alt="Jollof Rice" height="350px" width="500">
+                <p class="copy__paragraph--introduction">
+                    "Get ready to elevate your Jollof game with Jollof Mate!"<br>Say goodbye to Jollof rice disasters and hello to culinary perfection.
+                </p>
+                
+            </div>
+        </section>
+        
+        <section class="app" id="appsection">
+            <p id="app__copy">
+                "Adjust servings and let Jollof Mate recalculate your ingredients!" <br>
+                Whether it's a cozy dinner for two or a festive feast for the whole family, JollofMate effortlessly scales your recipe to match your needs. <br>No more guesswork! 
+            </p>
+            <h2>
                 Join the Jollof Revolution!
             </h2>
-            <p class="keyfeatures--paragraph">
-                <ul class="keyfeatures--lists">
-                    <li>
-                        Precise Scaling: Achieve the ideal balance of rice, tomatoes, peppers, and spices with our accurate scaling tool. No more guessing games!
-                    </li>
-                    <li>
-                        Ingredient Calculator: Input the number of servings you desire, and our app will calculate the exact quantities of ingredients needed. No more food waste!
-                    </li>
-                    <li>
-                        Authentic Recipes: Access a treasure trove of authentic Nigerian Jollof Rice recipes, complete with step-by-step instructions and pro tips.
-                    </li>
-                    <li>
-                        Time-Saving: Cut down your meal prep time with pre-set timers and reminders for each cooking step.
-                    </li>
-                    <li>
-                        Shopping List: Create a shopping list directly from your chosen recipe, making your grocery trips a breeze.
-                    </li>
-                </ul>
+            <p id="app__servings">
+            <b><label for="app__servings--number">Specify number of servings</label></b><br>
+            <input type="number" id="app__servings--number"><br>
+            <button id="app__servings--button">Get Cooking!</button>
             </p>
-        </p>
-    </section>
-    <section class="app" id="appsection">
-        <p class="app__servings--microcopy">
-            "Cooking for more or fewer people? Adjust servings and let Jollof Mate recalculate your ingredients!" 
-        </p>
-        <label for="app__servings--number">Specify number of servings</label>
-        <input type="number" id="app__servings--number">
-        <button id="app__servings--button">Get Cooking!</button>
-    </section>
-    <section class="ingredient">
-        <div id="ingredient__stewbase">
-            <label for="tomatoes" id="ingredient__stewbase--tomatoes"></label><br><br>
-            <label for="peppers" id="ingredient__stewbase--peppers"></label><br><br>
-            <label for="onions" id="ingredient__stewbase--onions"></label><br><br>
-            <label for="tomatopaste" id="ingredient__stewbase--tomatopaste"></label>
-        </div>
-        <div id="ingredient__spices">
-            <label for="ingredient__spices--thyme" id="ingredient__spices--thyme"></label><br><br>
-            <label for="ingredient__spices--bayleaves" id="ingredient__spices--bayleaves"></label><br><br>
-            <label for="ingredient__spices--curry" id="ingredient__spices--curry"></label><br><br>
-            <label for="ingredient__spices--salt" id="ingredient__spices--salt"></label><br><br>
-            <label for="ingredient__spices--seasoning" id="ingredient__spices--seasoning"></label><br><br>
-            <label for="ingredient__spices--garlic" id="ingredient__spices--garlic"></label><br><br>
-            <label for="ingredient__spices--ginger" id="ingredient__spices--ginger"></label><br><br>
-        </div>
-        <div id="ingredient__rice">
-            <label for="ingredient__rice--gram"
-            id="ingredient__rice--gram" ></label>
-        </div>
-        <div id="ingredient__oil">
-            <label for="ingredient__oil--vegetable" id="ingredient__oil--vegetable"></label><br><br>
-            <label for="ingredient__oil--butter" id="ingredient__oil--butter"></label>
-        </div> 
-        <div id="ingredient__liquid">
-            <label for="ingredient__liquid--stock" id="ingredient__liquid--stock"></label> <br><br>
-            <label for="ingredient__liquid--water" id="ingredient__liquid--water"></label>
-        </div>
-        <div id="ingredient__time">
-            <label for="ingredient__time--prep" id="ingredient__time--prep"></label><br><br>
-            <label for="ingredient__time--cook" id="ingredient__time--cook"></label><br><br>
-            <label for="ingredient__time--total" id="ingredient__time--total"></label>
-        </div>
-    </section>
-    <section class="recipe">
-        <label id="recipe__preparation"></label>
-        <label id="recipe__sauteVegetables"></label>
-        <label id="recipe__tomatoBlend"></label>
-        <label id="recipe__cookRice"></label>
-        <label id="recipe__simmer"></label>
-        <label id="recipe__serve"></label>
-        <label id="recipe__feel"></label>
-    </section>
+        </section>
+    </main>
+    <!-- output -->
+    <article>
+        <section class="ingredient">
+        
+            <div id = "ingredient__header">
+                <h2><label for="ingredient__header--head" id="ingredient__header--head"></label></h2>
+            </div>
+            
+            <div id="ingredient__stewbase">
+                <b><label for="tomatoes" id="ingredient__stewbase--head"></label></b> <br>
+                <label for="tomatoes" id="ingredient__stewbase--tomatoes"></label><br>
+                <label for="peppers" id="ingredient__stewbase--peppers"></label><br>
+                <label for="onions" id="ingredient__stewbase--onions"></label><br>
+                <label for="tomatopaste" id="ingredient__stewbase--tomatopaste"></label>
+            </div>
+            <div id="ingredient__spices">
+                <b><label for="ingredient__spices--head" id="ingredient__spices--head"></label></b><br>
+                <label for="ingredient__spices--thyme" id="ingredient__spices--thyme"></label><br>
+                <label for="ingredient__spices--bayleaves" id="ingredient__spices--bayleaves"></label><br>
+                <label for="ingredient__spices--curry" id="ingredient__spices--curry"></label><br>
+                <label for="ingredient__spices--salt" id="ingredient__spices--salt"></label><br>
+                <label for="ingredient__spices--seasoning" id="ingredient__spices--seasoning"></label><br>
+                <label for="ingredient__spices--garlic" id="ingredient__spices--garlic"></label><br>
+                <label for="ingredient__spices--ginger" id="ingredient__spices--ginger"></label>
+            </div>
+            <div id="ingredient__rice">
+                <b><label for="ingredient__rice--head" id="ingredient__rice--head" ></label></b><br>
+                <label for="ingredient__rice--gram" id="ingredient__rice--gram" ></label>
+            </div>
+            <div id="ingredient__oil">
+                <b><label for="ingredient__oil--head" id="ingredient__oil--head"></label></b><br>
+                <label for="ingredient__oil--vegetable" id="ingredient__oil--vegetable"></label><br>
+                <label for="ingredient__oil--butter" id="ingredient__oil--butter"></label>
+            </div> 
+            <div id="ingredient__liquid">
+                <b><label for="ingredient__liquid--head" id="ingredient__liquid--head"></label></b><br>
+                <label for="ingredient__liquid--stock" id="ingredient__liquid--stock"></label> <br>
+                <label for="ingredient__liquid--water" id="ingredient__liquid--water"></label>
+            </div>
+            <div id="ingredient__time">
+                <b><label for="ingredient__time--head" id="ingredient__time--head"></label></b><br>
+                <label for="ingredient__time--prep" id="ingredient__time--prep"></label><br>
+                <label for="ingredient__time--cook" id="ingredient__time--cook"></label><br>
+                <label for="ingredient__time--total" id="ingredient__time--total"></label>
+            </div>
+        </section>
+        <section class="recipe">
+            <div><h2><label id="recipe__header"></label></h2></div>
+            <div> <b><label id="recipe__preparation--head"></label></b></div>
+            <div> <label id="recipe__preparation"></label></div>
+            <div><b><label id="recipe__sauteVegetables--head"></label></b></div>
+            <div><label id="recipe__sauteVegetables"></label></div>
+            <div><b><label id="recipe__tomatoBlend--head"></label></b></div>
+            <div><label id="recipe__tomatoBlend"></label></div>
+            <div> <b><label id="recipe__cookRice--head"></label></b></div>
+            <div> <label id="recipe__cookRice"></label></div>
+            <div><b><label id="recipe__simmer--head"></label></b></div>
+            <div><label id="recipe__simmer"></label></div>
+            <div><b><label id="recipe__serve--head"></label></b></div>
+            <div><label id="recipe__serve"></label></div>
+            <div><i><label id="recipe__feel"></label></i></div>    
+        </section>
+    </article>
     <script src="/src/Js/index.js"></script>
 </body>
 </html>

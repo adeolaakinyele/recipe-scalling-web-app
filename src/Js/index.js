@@ -3,6 +3,7 @@ let serving;
 // Declaring the ingredients
 
 // stew base
+let stewBaseHead;
 let tomatoGrams;
 let tomatoSize;
 let redBellPepperGrams;
@@ -13,6 +14,7 @@ let tomatoPaste;
 
 
 // Spices, herbs and seasonings
+let spicesHead;
 let thyme;
 let bayLeaves;
 let curry;
@@ -23,28 +25,30 @@ let ginger;
 
 
 // Rice
+let riceHead;
 let riceGrams;
 let riceCup;
 
 // liquid
+let liquidHead;
 let stockLitre;
 let stockCup;
 let waterLitre;
 let waterCup;
 
 // fats and oils
+let oilHead;
 let vegetableOilLitre;
 let vegetableOilCups;
 let butterGram;
 let butterSpoon;
 
 // Time
+let timeHead;
 let prepTime;
 let cookTime;
 let totalTime;
 
-//recipe
-let jollofrecipe;
 
 // Declaring the values
 
@@ -89,36 +93,36 @@ prepTime = 10;
 cookTime = 60;
 
 // recipe
-let preparation = ` Preparation:
+let preparationHead = ` Preparation:`;
 
-Rinse the rice thoroughly and set it aside to drain.
+let preparation = `Rinse the rice thoroughly and set it aside to drain.
 In a blender, combine the diced tomatoes, tomato paste, red bell pepper, and green bell pepper. Blend until you have a smooth mixture.`;
 
-let sauteVegetables = ` Sauté Vegetables:
+let sauteVegetablesHead = ` Sauté Vegetables:`;
 
-Heat the vegetable oil in a large pot over medium heat.
+let sauteVegetables =`Heat the vegetable oil in a large pot over medium heat.
 Add the chopped onions and sauté until they become translucent.
 Stir in the minced garlic and ginger, and cook for another minute.`;
 
-let tomatoBlend = `Add Tomato Blend:
+let tomatoBlendHead = `Add Tomato Blend:`;
 
-Pour in the blended tomato and pepper mixture. Stir well.
+let tomatoBlend = `Pour in the blended tomato and pepper mixture. Stir well.
 Add the thyme, curry powder, paprika, cayenne pepper, and bay leaves. Cook the sauce, stirring occasionally, until it thickens and the oil starts to separate from the tomato mixture (about 10-15 minutes).`;
 
-let cookRice = `Cook the Rice:
+let cookRiceHead = `Cook the Rice:`;
 
-Add the drained rice to the tomato sauce. Stir to coat the rice evenly with the sauce.
+let cookRice = `Add the drained rice to the tomato sauce. Stir to coat the rice evenly with the sauce.
 Pour in the chicken or vegetable broth, and season with salt and pepper to taste.
 If you're using green peas, add them at this stage.
 Bring the mixture to a boil, then reduce the heat to low. Cover the pot with a tight-fitting lid.`;
 
-let simmer = `Simmer:
+let simmerHead = `Simmer:`;
 
-Let the Jollof Rice simmer on low heat for about 25-30 minutes or until the rice is tender and has absorbed all the liquid. Avoid stirring the rice too much to prevent it from becoming mushy.`;
+let simmer= `Let the Jollof Rice simmer on low heat for about 25-30 minutes or until the rice is tender and has absorbed all the liquid. Avoid stirring the rice too much to prevent it from becoming mushy.`;
 
-let serve = `Serve:
+let serveHead = `Serve:`;
 
-Once the rice is cooked, remove the bay leaves and fluff the rice with a fork.
+let serve= `Once the rice is cooked, remove the bay leaves and fluff the rice with a fork.
 Serve your delicious Nigerian Jollof Rice with your choice of protein (chicken, beef, fish) and enjoy!`;
 
 let feel = `Feel free to adjust the spices and seasonings to suit your taste preferences. Nigerian Jollof Rice is often served with fried plantains and coleslaw for a complete meal.`;
@@ -128,8 +132,12 @@ let feel = `Feel free to adjust the spices and seasonings to suit your taste pre
 
 document.getElementById("app__servings--button").onclick = function(){
     serving = document.getElementById("app__servings--number").value;
+
+    // ingredient
+    document.getElementById("ingredient__header--head").innerHTML = "Ingredients";
     
     // stew base
+    document.getElementById("ingredient__stewbase--head").innerHTML = "Stew Base";
     // tomatoes
     document.getElementById("ingredient__stewbase--tomatoes").innerHTML = "Tomatoes: " + (tomatoGrams*serving) + " grams or " + (tomatoSize*serving) + " medium sized";
     
@@ -143,6 +151,8 @@ document.getElementById("app__servings--button").onclick = function(){
     document.getElementById("ingredient__stewbase--tomatopaste").innerHTML = "Tomato paste or puree: " + (tomatoPaste*serving) + " grams";
 
      // spice and seasonings
+
+     document.getElementById("ingredient__spices--head").innerHTML = "Spices, Herbs and Seasonings";
 
     // thyme
     document.getElementById("ingredient__spices--thyme").innerHTML = "Thyme: " + (thyme*serving) + " teaspoons ";
@@ -165,18 +175,28 @@ document.getElementById("app__servings--button").onclick = function(){
     // ginger
     document.getElementById("ingredient__spices--ginger").innerHTML = "Ginger: " + (ginger*serving) + " inches ";
 
+    // rice
+    document.getElementById("ingredient__rice--head").innerHTML = "Rice";
+    document.getElementById("ingredient__rice--gram").innerHTML = "Rice: " + (riceGrams*serving) + " grams or " + ( riceCup*serving) + " cups";
+
     // oil
-    document.getElementById("ingredient__oil--vegetable").innerHTML = "Vegetable oil: " + (vegetableOilLitre*serving) + " litres or " + (vegetableOilCups*serving) + " cups";
+    document.getElementById("ingredient__oil--head").innerHTML = "Oils and fats";
+    document.getElementById("ingredient__oil--vegetable").innerHTML = "Vegetable oil: " + (vegetableOilLitre*serving) + " litres or " + Math.floor(vegetableOilCups*serving) + " cups";
 
     // butter
     document.getElementById("ingredient__oil--butter").innerHTML = "Unsalted butter: " + (butterGram*serving) + " grams or " + (butterSpoon*serving) + " tablespoon";
 
+  // liquid
+  document.getElementById("ingredient__liquid--head").innerHTML = "Water";
+
     // Stock
-    document.getElementById("ingredient__liquid--stock").innerHTML = "Stock: " + (stockLitre*serving) + " litres or " + ( stockCup*serving) + " cups";
+    document.getElementById("ingredient__liquid--stock").innerHTML = "Stock: " + (stockLitre*serving) + " litres or " + Math.floor( stockCup*serving) + " cups";
 
     // Water
-    document.getElementById("ingredient__liquid--water").innerHTML = "Water: " + (waterLitre*serving) + " litres or " + (waterCup*serving) + " cups";
+    document.getElementById("ingredient__liquid--water").innerHTML = "Water: " + (waterLitre*serving) + " litres or " + Math.floor(waterCup*serving) + " cups";
 
+    //time 
+    document.getElementById("ingredient__time--head").innerHTML = "Time";
     // prep time
     document.getElementById("ingredient__time--prep").innerHTML = "Preparation time: " + (prepTime*0.5*serving) + " mins" ;
      
@@ -188,13 +208,18 @@ document.getElementById("app__servings--button").onclick = function(){
      document.getElementById("ingredient__time--total").innerHTML = "Total time: " + totalTime + " mins";
      
     // recipe
-    // jollofrecipe = preparation + sauteVegetables + tomatoBlend + cookRice + simmer + serve + feel;
-    // document.getElementById("jollof__recipe").innerHTML = jollofrecipe;
+    document.getElementById("recipe__header").innerHTML = "Recipe"
+    document.getElementById("recipe__preparation--head").innerHTML = preparationHead;
     document.getElementById("recipe__preparation").innerHTML = preparation;
+    document.getElementById("recipe__sauteVegetables--head").innerHTML = sauteVegetablesHead;
     document.getElementById("recipe__sauteVegetables").innerHTML = sauteVegetables;
+    document.getElementById("recipe__tomatoBlend--head").innerHTML = tomatoBlendHead;
     document.getElementById("recipe__tomatoBlend").innerHTML = tomatoBlend;
+    document.getElementById("recipe__cookRice--head").innerHTML = cookRiceHead;
     document.getElementById("recipe__cookRice").innerHTML = cookRice;
+    document.getElementById("recipe__simmer--head").innerHTML = simmerHead;
     document.getElementById("recipe__simmer").innerHTML = simmer;
+    document.getElementById("recipe__serve--head").innerHTML = serveHead;
     document.getElementById("recipe__serve").innerHTML = serve;
     document.getElementById("recipe__feel").innerHTML = feel;
 
