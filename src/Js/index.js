@@ -43,7 +43,10 @@ let prepTime;
 let cookTime;
 let totalTime;
 
-// Declaring the vllues
+//recipe
+let jollofrecipe;
+
+// Declaring the values
 
 // stew base
 tomatoGrams = 200;
@@ -85,6 +88,41 @@ butterSpoon = 1;
 prepTime = 10;
 cookTime = 60;
 
+// recipe
+let preparation = ` Preparation:
+
+Rinse the rice thoroughly and set it aside to drain.
+In a blender, combine the diced tomatoes, tomato paste, red bell pepper, and green bell pepper. Blend until you have a smooth mixture.`;
+
+let sauteVegetables = ` Sauté Vegetables:
+
+Heat the vegetable oil in a large pot over medium heat.
+Add the chopped onions and sauté until they become translucent.
+Stir in the minced garlic and ginger, and cook for another minute.`;
+
+let tomatoBlend = `Add Tomato Blend:
+
+Pour in the blended tomato and pepper mixture. Stir well.
+Add the thyme, curry powder, paprika, cayenne pepper, and bay leaves. Cook the sauce, stirring occasionally, until it thickens and the oil starts to separate from the tomato mixture (about 10-15 minutes).`;
+
+let cookRice = `Cook the Rice:
+
+Add the drained rice to the tomato sauce. Stir to coat the rice evenly with the sauce.
+Pour in the chicken or vegetable broth, and season with salt and pepper to taste.
+If you're using green peas, add them at this stage.
+Bring the mixture to a boil, then reduce the heat to low. Cover the pot with a tight-fitting lid.`;
+
+let simmer = `Simmer:
+
+Let the Jollof Rice simmer on low heat for about 25-30 minutes or until the rice is tender and has absorbed all the liquid. Avoid stirring the rice too much to prevent it from becoming mushy.`;
+
+let serve = `Serve:
+
+Once the rice is cooked, remove the bay leaves and fluff the rice with a fork.
+Serve your delicious Nigerian Jollof Rice with your choice of protein (chicken, beef, fish) and enjoy!`;
+
+let feel = `Feel free to adjust the spices and seasonings to suit your taste preferences. Nigerian Jollof Rice is often served with fried plantains and coleslaw for a complete meal.`;
+
 
 // calculation
 
@@ -99,53 +137,65 @@ document.getElementById("app__servings--button").onclick = function(){
     document.getElementById("ingredient__stewbase--peppers").innerHTML = "Red bell pepper: " + (redBellPepperGrams*serving) + " grams or " + ( redBellPepperSize*serving) + " medium sized";
 
      // onions
-     document.getElementById("ingredient__stewbase--onions").innerHTML = "Onions: " + (onionGrams*serving) + " grams or " + ( onionSize*serving) + " medium sized";
+    document.getElementById("ingredient__stewbase--onions").innerHTML = "Onions: " + (onionGrams*serving) + " grams or " + ( onionSize*serving) + " medium sized";
 
       // Tomato paste
     document.getElementById("ingredient__stewbase--tomatopaste").innerHTML = "Tomato paste or puree: " + (tomatoPaste*serving) + " grams";
 
      // spice and seasonings
 
-     // thyme
-     document.getElementById("ingredient__spices--thyme").innerHTML = "Thyme: " + (thyme*serving) + " teaspoons ";
+    // thyme
+    document.getElementById("ingredient__spices--thyme").innerHTML = "Thyme: " + (thyme*serving) + " teaspoons ";
 
-     // bay leaves
-     document.getElementById("ingredient__spices--bayleaves").innerHTML = "Bay leaves: " + (bayLeaves*serving) + " leaves ";
+    // bay leaves
+    document.getElementById("ingredient__spices--bayleaves").innerHTML = "Bay leaves: " + (bayLeaves*serving) + " leaves ";
 
-     // curry
-     document.getElementById("ingredient__spices--curry").innerHTML = "Curry: " + (curry*serving) + " teaspoons ";
+    // curry
+    document.getElementById("ingredient__spices--curry").innerHTML = "Curry: " + (curry*serving) + " teaspoons ";
 
-     // salt
-     document.getElementById("ingredient__spices--salt").innerHTML = "Salt: " + (salt*serving) + " teaspoons ";
+    // salt
+    document.getElementById("ingredient__spices--salt").innerHTML = "Salt: " + (salt*serving) + " teaspoons ";
 
-     // seasoning
-     document.getElementById("ingredient__spices--seasoning").innerHTML = "Seasoning: " + (seasoning*serving) + " teaspoons ";
+    // seasoning
+    document.getElementById("ingredient__spices--seasoning").innerHTML = "Seasoning: " + (seasoning*serving) + " teaspoons ";
 
-     // garlic
-     document.getElementById("ingredient__spices--garlic").innerHTML = "Garlic: " + (garlic*serving) + " cloves ";
+    // garlic
+    document.getElementById("ingredient__spices--garlic").innerHTML = "Garlic: " + (garlic*serving) + " cloves ";
      
-     // ginger
-     document.getElementById("ingredient__spices--ginger").innerHTML = "Ginger: " + (ginger*serving) + " inches ";
+    // ginger
+    document.getElementById("ingredient__spices--ginger").innerHTML = "Ginger: " + (ginger*serving) + " inches ";
 
-      // oil
-      document.getElementById("ingredient__oil--vegetable").innerHTML = "Vegetable oil: " + (vegetableOilLitre*serving) + " litres or " + (vegetableOilCups*serving) + " cups";
+    // oil
+    document.getElementById("ingredient__oil--vegetable").innerHTML = "Vegetable oil: " + (vegetableOilLitre*serving) + " litres or " + (vegetableOilCups*serving) + " cups";
 
-      // butter
-      document.getElementById("ingredient__oil--butter").innerHTML = "Unsalted butter: " + (butterGram*serving) + " grams or " + (butterSpoon*serving) + " tablespoon";
+    // butter
+    document.getElementById("ingredient__oil--butter").innerHTML = "Unsalted butter: " + (butterGram*serving) + " grams or " + (butterSpoon*serving) + " tablespoon";
 
-     // Stock
-     document.getElementById("ingredient__stewbase--stock").innerHTML = "Stock: " + (stockLitre*serving) + " litres or " + ( stockCup*serving) + " cups";
+    // Stock
+    document.getElementById("ingredient__liquid--stock").innerHTML = "Stock: " + (stockLitre*serving) + " litres or " + ( stockCup*serving) + " cups";
 
-     // Water
-     document.getElementById("ingredient__stewbase--water").innerHTML = "Water: " + (waterLitre*serving) + " litres or " + (waterCup*serving) + " cups";
+    // Water
+    document.getElementById("ingredient__liquid--water").innerHTML = "Water: " + (waterLitre*serving) + " litres or " + (waterCup*serving) + " cups";
 
-     // prep time
-     document.getElementById("ingredient__time--prep").innerHTML = "Preparation time: " + (prepTime*0.5*serving) + " mins" ;
-     // cook time
+    // prep time
+    document.getElementById("ingredient__time--prep").innerHTML = "Preparation time: " + (prepTime*0.5*serving) + " mins" ;
+     
+    // cook time
      document.getElementById("ingredient__time--cook").innerHTML = "Cooking time: " + (cookTime*0.5*serving) + " mins";
 
-     // total time
+    // total time
      totalTime = (prepTime*0.5*serving) + (cookTime*0.5*serving)
      document.getElementById("ingredient__time--total").innerHTML = "Total time: " + totalTime + " mins";
+     
+    // recipe
+    // jollofrecipe = preparation + sauteVegetables + tomatoBlend + cookRice + simmer + serve + feel;
+    // document.getElementById("jollof__recipe").innerHTML = jollofrecipe;
+    document.getElementById("recipe__preparation").innerHTML = preparation;
+    document.getElementById("recipe__sauteVegetables").innerHTML = sauteVegetables;
+    document.getElementById("recipe__tomatoBlend").innerHTML = tomatoBlend;
+    document.getElementById("recipe__cookRice").innerHTML = cookRice;
+    document.getElementById("recipe__simmer").innerHTML = simmer;
+    document.getElementById("recipe__serve").innerHTML = serve;
+    document.getElementById("recipe__feel").innerHTML = feel;
 
 }
