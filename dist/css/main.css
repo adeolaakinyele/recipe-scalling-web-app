@@ -16,6 +16,7 @@ body header {
   color: rgb(242, 65, 34);
   font-family: Rubik Moonrocks;
   font-weight: 10;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 body header i {
   color: rgb(26, 80, 1);
@@ -32,6 +33,7 @@ body main #copy {
 }
 body main #appsection #app__servings {
   box-sizing: border-box;
+  box-shadow: 2px 2px 3px #888, -2px -2px 3px #888;
   background-color: bisque;
   display: flex;
   flex-direction: column;
@@ -45,12 +47,13 @@ body main #appsection #app__servings button {
   padding: 10px;
   background-color: rgb(26, 80, 1);
   color: white;
+  font-family: Reenie Beanie;
   font-size: large;
 }
 body main #appsection #app__servings button:hover {
   background-color: rgb(242, 65, 34);
   color: white;
-  font-size: large;
+  font-size: x-large;
 }
 body main #appsection #app__servings input:hover {
   background-color: rgb(232, 230, 230);
@@ -80,4 +83,5 @@ body h2 {
   font-family: Reenie Beanie;
   color: rgb(242, 65, 34);
   font-size: 60px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }/*# sourceMappingURL=main.css.map */
