@@ -5,9 +5,19 @@ let SetTime;
 // declaring the countdown for mins and sec
 function countdown() {
     if (SetTime == 0) {
-      document.getElementById("Timer").innerHTML = "Your Jollof is ready"
-    } else {
-        document.getElementById("Timer").innerHTML = Math.floor(SetTime/60)+ '  Mins' + " " + (SetTime % 60) + '  Secs to your delicious jollof';
+      document.getElementById("timer").innerHTML = "Your Jollof rice is ready!"
+      // emoji
+        + `&#x1F958;`+ `&#x1F372;`;
+      document.getElementById("timer").style.fontSize = "50px";
+      document.getElementById("timer").style.fontWeight = "700";
+      document.getElementById("timer").style.lineHeight = "4rem";
+    } 
+    
+    else {
+        document.getElementById("minsTimer").innerHTML = Math.floor(SetTime/60);
+        document.getElementById("mins").innerHTML = "mins";
+        document.getElementById("secsTimer").innerHTML = (SetTime % 60);
+        document.getElementById("secs").innerHTML = "secs"
         SetTime--;  
     }
   }

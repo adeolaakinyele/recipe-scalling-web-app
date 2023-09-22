@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kitchen Timer</title>
-    <link rel="stylesheet" href="/dist/css/main.css">
+    <link rel="stylesheet" href="/dist/css/timer.css">
     <link rel="icon" href="/src/assets/business-3d-tomato.png" type="image/x-icon">
 </head>
 <body>
@@ -19,13 +19,29 @@
         </div>
     </header>
     <main>
-        <label for="getTime" id="getTime" > Enter your cook time (mins):</label><br>
-        <input type="number" id="timeInput"><br>
-        <button id="startButton">Start</button><br>
-        <h1>
-            <label for="timer" id="Timer">00:00</label>
-        </h1>
-        
+        <section id="apptimer">
+            <b><label for="getTime" id="getTime" > Enter your cooking time (mins):</label></b><br>
+            <input type="number" id="timeInput"><br>
+            <button id="startButton">Start</button>
+        </section>
+        <section class ="timer" id="timer">
+            <div>
+                <h2>
+                    <label for="minsTimer" id="minsTimer" class="minsTimer">  00  </label>
+                </h2>
+            </div>
+            <div id="minsdiv">
+                <label for="mins" id="mins"></label>
+            </div>
+            <div>
+                <h2>
+                    <label for="secsTimer" id="secsTimer" class="secsTimer">  00  </label> <br>
+                </h2>
+            </div>
+            <div id="secsdiv">
+                <label for="secs" id="secs"></label>
+            </div>
+        </section>
     </main>
     <script src ="/src/Js/timer.js"></script>
 </body>
