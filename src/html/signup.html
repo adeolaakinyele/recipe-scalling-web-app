@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jollof Mate sign up page</title>
+    <link rel="stylesheet" href="/dist/css/signup.css">
+    <link rel="icon" href="/src/assets/business-3d-tomato.png" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div>
+            <img src="/src/assets/business-3d-tomato.png" alt="tomato" height="30px" width="40px">
+        </div>
+        <div>
+            <h1>
+                <i>Jollof</i>
+                Mate</h1>
+        </div>
+    </header>
+    <section id = "signUpCopy">
+        <p>
+            "Let's get started! Sign up or log in to unlock a world of Jollof possibilities."
+        </p>
+    </section>
+    <section id="createAccount">
+            <div id="name">
+                <input type="text" id="firstName"  placeholder="&#128135;&zwj;&#9794; First Name" required>
+                <input type="text" id="lastName" placeholder="&#128135;&zwj;&#9794; Last Name" required > 
+            </div>
+            <div>
+                <input type="text" id="userName" placeholder="&#128522; User Name" required>
+            </div>
+            <div id="birthDetails">
+                <div>
+                    <b><label for="dateOfBirth">Date of Birth :</label></b>
+                    <input type="date" name="dateOfBirth" id="dateOfBirth" required>
+                </div>
+                <div>
+                    <b><label for="gender">Gender :</label></b>
+                    <select name="gender" id="gender" required>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+            </div>
+            <div id="emailAddress">
+                <input type="email" name="email" id="email"  placeholder="&#128231 Email" required>
+                <input type="number" name="phone Number" id="phoneNumber" placeholder="&#128241 Phone Number" required>
+            </div>
+            <div id="passwordValidation">
+                <input type="password" name="createPassword" id="createPassword"  placeholder=" &#128272 Create Password" required>
+                <input type="password" name="confirmPassword" id="confirmPassword"  placeholder=" &#128272 Confirm Password" required>
+            </div>
+            <div>
+                <input type="checkbox" name="terms" id="terms" required>
+                <label for="terms" id="termsLabel"> I read and agree to Terms and Conditions</label>
+            </div>
+            <div id="submit">
+                <button id="button">Create Account</button>
+            </div>
+    </section>
+    <script src="/src/Js/signup.js"></script>
+</body>
+</html>

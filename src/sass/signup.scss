@@ -1,0 +1,57 @@
+@import url(/dist/css/main.css);
+@import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch&family=Reenie+Beanie&family=Rubik+Moonrocks&display=swap');
+
+
+
+body{
+     line-height: 3rem;
+
+}
+#createAccount{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    
+}
+input{
+    font-size: large;
+    padding: 10px;
+    color: grey;
+    border-radius: 20px;
+    margin: 0px 20px;
+    box-sizing: border-box;
+    box-shadow: 2px 2px 3px #888, -2px -2px 3px #888;
+    
+}
+select{
+    font-size: large;
+    padding: 10px;
+    color: grey;
+    border-radius: 20px;
+    margin: 0px 20px;
+    
+}
+label{
+    margin: 0px 20px;
+}
+div{
+    gap: 20px;
+    
+}
+button{
+    border-radius: 50px;
+    padding: 10px 20px;
+    background-color: rgb(26, 80, 1);
+    color: white;
+    font-size: large;
+    }
+button:hover{
+    background-color:  rgb(242, 65, 34);
+    color: white;
+    font-size: x-large;
+}
+input:hover{
+    background-color: rgb(232, 230, 230);
+    padding: 2px;
+}
