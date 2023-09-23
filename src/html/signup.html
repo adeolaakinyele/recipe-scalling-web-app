@@ -18,47 +18,51 @@
                 Mate</h1>
         </div>
     </header>
-    <section id = "signUpCopy">
-        <p>
-            "Let's get started! Sign up or log in to unlock a world of Jollof possibilities."
-        </p>
-    </section>
     <section id="createAccount">
-            <div id="name">
-                <input type="text" id="firstName"  placeholder="&#128135;&zwj;&#9794; First Name" required>
-                <input type="text" id="lastName" placeholder="&#128135;&zwj;&#9794; Last Name" required > 
-            </div>
-            <div>
-                <input type="text" id="userName" placeholder="&#128522; User Name" required>
-            </div>
-            <div id="birthDetails">
-                <div>
-                    <b><label for="dateOfBirth">Date of Birth :</label></b>
-                    <input type="date" name="dateOfBirth" id="dateOfBirth" required>
+            <section id="accountDetails">
+                <div id="name">
+                    <input type="text" id="firstName"  placeholder="&#128135;&zwj;&#9794; First Name" required>
+                    <input type="text" id="lastName" placeholder="&#128135;&zwj;&#9794; Last Name" required > 
                 </div>
                 <div>
-                    <b><label for="gender">Gender :</label></b>
-                    <select name="gender" id="gender" required>
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
-                    </select>
+                    <input type="text" id="userName" placeholder="&#128522; User Name" required>
                 </div>
-            </div>
-            <div id="emailAddress">
-                <input type="email" name="email" id="email"  placeholder="&#128231 Email" required>
-                <input type="number" name="phone Number" id="phoneNumber" placeholder="&#128241 Phone Number" required>
-            </div>
-            <div id="passwordValidation">
-                <input type="password" name="createPassword" id="createPassword"  placeholder=" &#128272 Create Password" required>
-                <input type="password" name="confirmPassword" id="confirmPassword"  placeholder=" &#128272 Confirm Password" required>
-            </div>
-            <div>
-                <input type="checkbox" name="terms" id="terms" required>
-                <label for="terms" id="termsLabel"> I read and agree to Terms and Conditions</label>
-            </div>
-            <div id="submit">
-                <button id="button">Create Account</button>
-            </div>
+                <div id="birthDetails">
+                    <span>
+                        <b><label for="dateOfBirth">Date of Birth :</label></b>
+                        <input type="date" name="dateOfBirth" id="dateOfBirth" required>
+                    </span>
+                    <span>
+                        <b><label for="gender">Gender :</label></b>
+                        <select name="gender" id="gender" required>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                    </span>
+                </div>
+                <div id="emailAddress">
+                    <input type="email" name="email" id="email"  placeholder="&#128231 Email" required>
+                    <input type="number" name="phone Number" id="phoneNumber" placeholder="&#128241 Phone Number" required>
+                </div>
+                <div id="passwordValidation">
+                    <input type="password" name="createPassword" id="createPassword"  placeholder=" &#128272 Create Password" required>
+                    <input type="password" name="confirmPassword" id="confirmPassword"  placeholder=" &#128272 Confirm Password" required>
+                </div>
+                <div>
+                    <input type="checkbox" name="terms" id="terms" required>
+                    <label for="terms" id="termsLabel"> I read and agree to Terms and Conditions</label>
+                </div>
+                <div id="submit">
+                    <button id="button">Create Account</button>
+                </div>
+            </section>
+            <section id="copy">
+                <p>
+                    "Let's get started! Sign up or log in to unlock a world of Jollof possibilities."
+                </p>
+            </section>
+            <div class ="triangleUp"> </div>
+            <div class ="triangleDown"> </div>
     </section>
     <script src="/src/Js/signup.js"></script>
 </body>
