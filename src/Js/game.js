@@ -1,20 +1,27 @@
-let copy;
-let start;
-let answer;
-let submit;
-let gameSection;
-let riddle;
-let riddleBox;
-let currentRiddle;
-let allRiddles;
-let displayRiddle;
-let checkAnswer;
-let answers;
-let result;
-let next;
-let scores;
+let copy; // section for copy
+let startButton; // start button
+let userAnswer; // input from the user
+let submitButton;// submit answer
+let gameSection; 
+let riddle; //value for the riddles in the array
+let riddleBox; // space to display the riddle
+let currentRiddle;// index number for the riddle
+let allRiddles; // name for the array containing the riddles
+let theRiddles; // key:value for the riddle
+let displayRiddle;// function to display riddle
+let checkAnswer;// function to check answer
+let result;// space to display the result for check answer
+let nextButton; // to move to the next riddle
+let scores;// scored points
+let rewards;// space to display reward to claim after quiz
+let claimRewards;// function containing the reward
+let lives;// number of lives at each question
+let startAgain; // to restart the gain after game over
+let answerStyle; // exlores answers format the user can give such as upper case lower case, sentence case
+let gameStart;
+let gameOver; // when liveS = 0
 
-
+// list of riddles
 allRiddles = [{
   riddle: `In Nigerian stews and soups,\n you'll find me there,\n
   I'm a spicy little pepper,\n with a fiery glare,\n
@@ -29,7 +36,7 @@ allRiddles = [{
   Spiced with peppers, onions, and more, just right\n,
   Folded in a paper or served on a plate\n,
   What am I, a quick, savory, and spicy fate?`,
-  answer : "Suya "
+  answer : "Suya"
 },
 
 {
@@ -41,100 +48,170 @@ allRiddles = [{
   answer : "Moin Moin"
 },
 
+{
+  riddle: `I'm a Nigerian delight, often served at celebrations so bright,
+  With jollof rice or fried rice, I make a perfect pair,
+  I'm made from plantains, sliced and fried with care.
+  What am I?`,
+  answer : "Dodo"
+},
+
 ];
 
 copy = document.getElementById("copy");
-start = document.getElementById("start");
+startButton = document.getElementById("start");
 gameSection = document.getElementById("gameSection");
 riddleBox = document.getElementById("riddle");
-answer = document.getElementById("answer");
-submit = document.getElementById("submit");
-next = document.getElementById("next")
-result = document.getElementById("result")
-scores = document.getElementById("scores")
+userAnswer = document.getElementById("answer");
+submitButton = document.getElementById("submit");
+nextButton = document.getElementById("next");
+result = document.getElementById("result");
+scores = document.getElementById("scores");
+rewards = document.getElementById("claimRewards");
+startAgain = document.getElementById("startAgain");
+
+//Reseting values
 gameSection.style.display = "none";
-next.style.display = "none"
+nextButton.style.display = "none"
+rewards.style.display = "none"; 
+startAgain.style.display = "none";
+result.style.display = "none"
 
-
+// declaring values and functions
 currentRiddle = 0;
 scores = 0;
+lives = 3; // number of lives given
 let theRiddle = allRiddles[currentRiddle];
 
+// display riddle
 displayRiddle = function () { 
     riddleBox.innerHTML = theRiddle.riddle;
  };
-
-
- checkAnswer = function () { 
-    if(answer.value == theRiddle.answer){
-    currentRiddle++
-    scores += 20;
-    result.innerHTML = `correct!\n Your current scores is ${scores}`;
-    gameSection.style.display = "none";
-    next.style.display = "initial";
+  
+// convert string to upper case
+function titleCase(str) {
+  str = str.toLowerCase().split(' ');
+  for (var i = 0; i < str.length; i++) {
+    str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1); 
   }
-  else{
-    result.innerHTML = "wrong answer! \n try again! \n You got this!"
+  return str.join(' ');
+};
+
+ // answer style : allows different answer styles
+answerStyle = function(){ 
+  if (
+    userAnswer.value == theRiddle.answer ||
+    userAnswer.value == theRiddle.answer.toUpperCase() ||
+    userAnswer.value == theRiddle.answer.toLowerCase() ||
+    userAnswer.value == titleCase(theRiddle.answer)) {
+    return true;
+  } else {
+    return false;
   }
 };
 
-start.onclick = function () { gameSection.style.display = "initial"; 
-  copy.style.display = "none";
-  displayRiddle()
+// checkAnswer
+checkAnswer = function () { 
+  switch (answerStyle()) {
+    case true:
+      if (lives > 0) {
+      result.style.display = "initial";
+      nextButton.style.display = "initial";
+      scores += 20;
+      result.innerHTML = `correct!\n Your current scores is ${answerStyle()} ${scores}`;
+      gameSection.style.display = "none";
+      userAnswer.value = ""; 
+      }
+       break;
+
+    case false:
+      if (lives > 0) { 
+      gameSection.style.display = "initial";
+      result.style.display = "initial";
+      result.innerHTML = `wrong answer! \n try again! you can do this \n You got ${lives} lives left !`;
+      userAnswer.value = "";
+      console.log(lives);
+      lives -=1;
+      return lives;
+      }
+      break;
+    
+    default:
+      
+  }
 };
 
-
-submit.onclick = function (){
-    checkAnswer()
-};
-
-next.onclick = function (){
+// nextRiddle
+let nextRiddle = function (){
+  if (scores == 60 & lives > 0) {
+    claimRewards()
+  }
+  else
+  {currentRiddle +=1 // to move to the next riddle using index number
+  theRiddle = allRiddles[currentRiddle];
   gameSection.style.display = "initial";
   riddleBox.innerHTML = theRiddle.riddle;
   result.style.display = "none";
-  next.style.display = "none";
-  console.log(currentRiddle);
-}
+  nextButton.style.display = "none";
 
-
-
-
-
-// displayRiddle = function () {
-//     for (let key in allRiddles) {
-//         return allRiddles[key];
-//   }   
-// };
-
-// answers = function(){
-//     for (let key in allRiddles) {
-//         return key;
-//     }
-// };
-
-// checkAnswer = function(){
-//     switch (answer.value) {
-//         case answers():
-//           alert("Correct")
-//           break;
-//         case answers().toUpperCase():
-//           alert("Correct")
-//           break;
-//         case answers().toLowerCase():
-//           alert("Correct")
-//           break;
-//         default:
-//           alert("You have provided a wrong answer, try again")
-//       }
-// };
-
-
-start.onclick = function () { gameSection.style.display = "contents"; 
-copy.style.display = "none";
-riddle.innerHTML = displayRiddle()
+  };
 };
-submit.onclick = function (){
+
+// claim rewards
+claimRewards = function (){
+  result.style.display = "none";
+  nextButton.style.display = "none";
+  rewards.style.display = "initial"
+  let money = 1000000;
+  let naira = money.toLocaleString("en-US", {style:"currency", currency:"NGN"});
+  rewards.innerHTML = `Congratulations, your score is ${scores} and you have won ${naira}  `;
+};
+
+
+//runGame
+runGame = function(){
+  for(let riddle of allRiddles){
+    displayRiddle()
+    submitButton.onclick = function (){
+      if(lives == 0){
+        gameOver()
+      }
+      else{
         checkAnswer()
+      }
+      
+  };
+    nextButton.onclick = function () { 
+      nextRiddle()  
+  };
+  };
+};
 
-}
+//gameStart
+gameStart = function () { gameSection.style.display = "initial";
+copy.style.display = "none";
+result.style.display ="none"
+rewards.style.display = "none"
+runGame();
+}; 
 
+
+// game over to end game when lives =0
+gameOver = function () {
+  gameSection.style.display = "none";
+  result.style.display = "initial";
+  result.innerHTML = `Opps! you have exhausted your lives! \n  start try again! you can do this`;
+  startAgain.style.display = "initial"
+};
+
+// startButton
+startButton.onclick = function (){ gameStart();
+};
+
+// start
+startAgain.onclick = function () { startButton.onclick()
+  startAgain.style.display = "none";
+  result.style.display = "none";
+  userAnswer.value = "" 
+  lives = 3
+};
