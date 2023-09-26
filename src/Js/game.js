@@ -56,6 +56,55 @@ allRiddles = [{
   answer : "Dodo"
 },
 
+{
+  riddle: `I'm a traditional Nigerian soup, thick and green,
+  Made from ground melon seeds, a delicious scene,
+  With vegetables and sometimes meat, I'm cooked with care,
+  What am I, a Nigerian favorite to share?`,
+  answer : "Egusi"
+},
+
+{
+  riddle: `I'm a leafy green, a popular choice,
+  In Nigerian soups, I add a distinct voice,
+  With a slightly bitter taste and lots of flair,
+  Guess my name, used in soups everywhere.`,
+  answer : "Bitter leaves"
+},
+
+{
+  riddle: `I'm a sweet delight, often served in a bowl,
+  Made from millet or corn, with a texture that's whole,
+  Sugar, milk, and spices, in me they're mixed,
+  What am I, a warm treat that's often nixed?`,
+  answer : "Pap"
+},
+
+{
+  riddle: `I'm a pungent condiment with a strong appeal,
+  In Nigerian dishes, I make flavors real,
+  Gotten from the oceans, a taste that's bold,
+  What am I, enhancing dishes manifold?`,
+  answer : "Crayfish"
+},
+
+
+{
+  riddle: `I'm a condiment with a tangy delight,
+  Used in Nigerian sauces, a flavorful bite,
+  Made from fermented locust beans so fine,
+  What is my local name, in Nigerian dishes, I entwine?`,
+  answer : "Iru"
+},
+
+{
+  riddle: `I'm a famous Nigerian snack, crispy and light,
+  Fried until golden brown, a delicious sight,
+  Made from bean batter with spices galore,
+  What am I, enjoyed by many, for sure??`,
+  answer : "Akara"
+},
+
 ];
 
 copy = document.getElementById("copy");
@@ -142,7 +191,7 @@ checkAnswer = function () {
 
 // nextRiddle
 let nextRiddle = function (){
-  if (scores == 60 & lives > 0) {
+  if (scores == 100 & lives > 0) {
     claimRewards()
   }
   else
