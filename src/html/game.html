@@ -18,38 +18,50 @@
                 Mate</h1>
         </div>
     </header>
-   <section id="copy">
-        <!-- simple copy to welcome people to the page and get started -->
-        <h1>
-            Spice it Up for Naira Rewards
-        </h1>
-        <p>
-             "Welcome to JollofMate Jackpot Get ready to test your culinary knowledge and win big!"
-        </p>
-        <h3> Instructions</h3>
-        <p id=" instructions">
-            " Your task is to guess the key ingredients used in various Nigerian dishes based on clues provided. Pay close attention to the riddles, and take your best guess. Ready to dive into the world of Nigerian cuisine? Let's get started!"
-        </p>
-        <button id="start">Start</button>
+    <section id = "main">
+        <section id="copy">
+            <!-- simple copy to welcome people to the page and get started -->
+            <h1>
+                Spice it Up for Naira Rewards
+            </h1>
+            <p>
+                 "Welcome to Jollof Mate Jackpot Get ready to test your culinary knowledge and win big!"
+            </p>
+            <h3> Instructions</h3>
+            <ul id=" instructions">
+                <li>
+                    Your task is to guess the ingredients or dishes based on clues provided.
+                </li>
+                <li>
+                    Pay close attention to the riddles, and take your best guess
+                </li>
+                <li>
+                    Ready to dive into the world of Nigerian cuisine? Let's get started!"
+                </li>
+            </ul>
+            <button id="start">Start</button>
+        </section>
+         <!-- section to display the riddles -->
+        <section id="gameSection">
+            <p id="riddle"></p>
+            <div id="input">
+                <input type="text" id="answer" placeholder="Your answer"><br>
+                <button id="submit"> Submit</button>
+            </div>
+       </section>
+       <!-- section to display the result -->
+       <section >
+            <div id="result">
+            </div>
+            <div id = "controlButtons">
+                <button id="next">Next</button>
+                <button id="startAgain">Start Again</button>
+            </div>
+       </section>
+        <!-- final section to claim the reward -->
+       <div id = "claimRewards" >
+       </div>
     </section>
-     <!-- section to display the riddles -->
-    <section id="gameSection">
-        <p id="riddle"></p> <br>
-        <input type="text" id="answer" placeholder="Your answer"><br>
-        <button id="submit"> Submit</button>
-   </section>
-   <!-- section to display the result -->
-   <section >
-        <div id="result">
-        </div>
-        <div>
-            <button id="next">Next</button>
-            <button id="startAgain">Start Again</button>
-        </div>
-   </section>
-    <!-- final section to claim the reward -->
-   <div id = "claimRewards" >
-   </div>
    <script src="/src/Js/game.js"></script>
 </body>
 </html>

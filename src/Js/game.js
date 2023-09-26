@@ -130,7 +130,6 @@ checkAnswer = function () {
       result.style.display = "initial";
       result.innerHTML = `wrong answer! \n try again! you can do this \n You got ${lives} lives left !`;
       userAnswer.value = "";
-      console.log(lives);
       lives -=1;
       return lives;
       }

@@ -1,2 +1,95 @@
 @import url(/dist/css/main.css);
 @import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch&family=Reenie+Beanie&family=Rubik+Moonrocks&display=swap');
+
+body{
+    background-image: url('/src/assets/pexels-keesha\'s-kitchen-13915043.jpg');
+    background-size: cover;
+}
+#main{
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    cursor: pointer;
+    
+}
+#gameSection{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-items: center;
+    
+}
+#copy{
+        background-color: yellow;
+        padding: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-items: center;
+        box-shadow: 0px 0px 16px 12px rgba(0,0,0,0.38);
+     };
+#gameSection{
+        background-color: yellow;
+        height: auto;
+        width: 500px;
+        padding: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-items: center;
+        box-shadow: 0px 0px 16px 12px rgba(0,0,0,0.38);
+
+        #input{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-items: center;
+        }
+     }
+#result{
+    background-color: yellow;
+    height: auto;
+    width: 500px;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    box-shadow: 0px 0px 16px 12px rgba(0,0,0,0.38);
+     };
+#controlButtons{
+    padding: 0px 50px;
+    background-color: yellow;
+    margin: 10px;
+}
+#claimRewards{
+    background-color: yellow;
+    height: auto;
+    width: 500px;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    box-shadow: 0px 0px 16px 12px rgba(0,0,0,0.38);
+     }
+
+     button{
+        border-radius: 50px;
+        padding: 10px;
+        background-color: rgb(26, 80, 1);
+        color: white;
+        font-family: Reenie Beanie;
+        font-size: large;
+        }
+    button:hover{
+        background-color:  rgb(242, 65, 34);
+        color: white;
+        font-size: x-large;
+    }
+    input:hover{
+        background-color: rgb(232, 230, 230);
+        padding: 2px;
+    }
