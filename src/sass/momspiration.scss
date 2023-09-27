@@ -1,0 +1,76 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch&family=Reenie+Beanie&family=Rubik+Moonrocks&display=swap');
+
+
+body{
+    background-color: black;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    cursor: pointer;
+}
+header{
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    justify-content:flex-start;
+    align-items: center;
+    width: 50%;
+    gap: 10px;
+    font-family: Rubik Moonrocks;
+    font-weight: 10;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    i{
+        color: rgb(244, 216, 60);
+    }
+};
+#main_content {
+        display: flex;
+        flex-direction: row;
+        align-content: center;
+        justify-content: center;
+        padding: 0px;
+        font-size: x-large;
+};
+#image {
+    padding : 0;
+}
+#display_content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+    padding: 50px;
+};
+#result{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+    padding: 50px;
+}
+input{
+    line-height: 2rem;
+    font-size: large;
+}
+
+
+                button{
+                    border-radius: 50px;
+                    padding: 10px;
+                    background-color: rgb(26, 80, 1);
+                    color: white;
+                    font-family: Reenie Beanie;
+                    font-size: large;
+                    margin: 20px;
+                    }
+                button:hover{
+                    background-color: rgb(244, 216, 60);
+                    color: white;
+                    font-size: x-large;
+                }
+                input:hover{
+                    background-color: rgb(232, 230, 230);
+                    padding: 2px;
+                }
