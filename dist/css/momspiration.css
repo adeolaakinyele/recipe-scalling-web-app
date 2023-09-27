@@ -4,6 +4,7 @@ body {
   color: white;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   cursor: pointer;
+  padding: 20px;
 }
 
 header {
