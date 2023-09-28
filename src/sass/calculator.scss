@@ -1,0 +1,35 @@
+#calculator{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0px;
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+    justify-content: center;
+    row-gap: 0px;
+    column-gap: 0px;
+    width: fit-content;
+    padding: 50px;
+    
+}
+div { 
+    padding: 0px;
+    margin: 0px;
+    width:fit-content;
+    border: 0.5px solid black ;
+}
+#screen{
+    width: fit-content;
+    background-color: grey;
+    border: 0.5px solid black ;
+}
+#label{
+    width: 50px;
+    box-sizing: border-box;
+    background-color: grey;
+    border: 0.5px solid black ;
+}
+button{
+    height: 50px;
+    width: 50px;
+}
