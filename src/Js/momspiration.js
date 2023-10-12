@@ -54,29 +54,49 @@ allQuotes = ["To my shining star, child, your potential is limitless. Keep belie
 //Resetting
 result.style.display = "none";
 
+let fillChildName = async function () {
+    firstQuote = allQuotes[theQuote];
+    secondQuote = firstQuote.replace("child", document.getElementById("childName").value);
+    messageBox.innerHTML = secondQuote;
+}
 
- 
+API_KEY = "24287806-5592daa572d11784259265118"
+const getImages = async () => {
+    try {
+        const response = await fetch('https://pixabay.com/api/?key=24287806-5592daa572d11784259265118&q=mom&per_page=30');
+        const data = await response.json();
 
-let fillChildName = function () { 
-    firstQuote = allQuotes[theQuote]
-    secondQuote = firstQuote.replace("child", document.getElementById("childName").value );
-    messageBox.innerHTML = secondQuote ;
- }
+        if (response.ok) {
+            // Check if the response is successful
+            const randomImage = Math.floor(Math.random()*29);
+            document.getElementById("stable_image").src = data.hits[randomImage].largeImageURL;
+        } else {
+            // Handle non-successful response
+            console.error("Error: " + data.error.message);
+            document.getElementById("stable_image").src = "initial";
+        }
+    } catch (error) {
+        console.error(error);
+        document.getElementById("stable_image").src = "initial";
+    }
+};
+
 
 // get quote
-getQuoteButton.onclick =  function (){
+getQuoteButton.onclick = async function () {
+    await getImages()
     result.style.display = "initial";
-    copy.style.display = "none"
-    fillChildName() 
+    copy.style.display = "none";
+    await fillChildName(); // Wait for fillChildName to complete
 };
+
+// changing image to AI-generated image
 
 
 // get new quote
-newMessageButton.onclick = function (){
-    copy.style .display = "initial";
+newMessageButton.onclick = async function () {
+    await getImages();
+    copy.style.display = "initial";
     result.style.display = "none";
     document.getElementById("childName").value = "";
 };
- 
-
-
